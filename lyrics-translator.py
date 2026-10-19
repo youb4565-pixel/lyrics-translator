@@ -89,3 +89,21 @@ if __name__ == "__main__":
             print("找不到這首歌的相關網頁，請嘗試更換關鍵字。")
     else:
         print("未輸入，程式結束。")
+if __name__ == "__main__":
+    print("="*40)
+    print("   🎶 AI 全自動歌詞搜尋與翻譯機 🎶   ")
+    print("="*40)
+    
+    user_query = input("請輸入歌手與歌曲名稱 (例如: Coldplay Yellow): ")
+    
+    if user_query.strip():
+        found_url = search_lyrics_url(user_query.strip())
+        if found_url:
+            translate_from_url(found_url)
+        else:
+            print("找不到這首歌的相關網頁，請嘗試更換關鍵字。")
+    else:
+        print("未輸入，程式結束。")
+
+    # 在最後一行加上這句，視窗就會等待按鍵不會自動關閉
+    input("\n按下 Enter 鍵結束程式...")
